@@ -407,7 +407,7 @@
 \newcommand{\cvref}[2]{%
   \textcolor{emphasis}{\textbf{#1}}\par
   \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em,align=left]
-    \item[\small\normalfont\faLinkedin]\href{https://linkedin.com/in/#2}{#2}
+    \item[\small\normalfont\faGraduationCap]\href{https://linkedin.com/in/#2}{#2}
   \end{description}
 }
 
