@@ -41,11 +41,14 @@
 %% file more 'friendly' with copy-paste etc
 \RequirePackage[a-1b]{pdfx}
 \RequirePackage[margin=2cm]{geometry}
-\RequirePackage[fixed]{fontawesome5}
+\RequirePackage{fontawesome5}
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
 \RequirePackage{markdown}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
 
 %% v1.1.5: added for convenience
 \newif\ifxetexorluatex
@@ -321,6 +324,18 @@
   \medskip\normalsize
 }
 
+\newcommand{\cvevents}[5]{%
+  {\large\color{emphasis}#1}
+  \ifstrequal{#2}{}{}{\large{\color{accent}#2}}
+  \par\medskip\normalsize
+  \ifstrequal{#3}{}{}{{\small\makebox[0.33\linewidth][l]{\color{accent}\faCalendar\color{emphasis}~#3}}}
+  \ifstrequal{#4}{}{}{{\small\makebox[0.33\linewidth][l]{\color{accent}\faMapMarker\color{emphasis}~#4}}}
+  \ifstrequal{#5}{}{}{{\small\makebox[0.33\linewidth][l]{\color{accent}\faInfoCircle\color{emphasis}~#5}}}\par
+  \medskip\normalsize
+}
+
+
+
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
   \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
@@ -403,7 +418,7 @@
     \endgroup
 }
 
-% Fork: CV reference tag has been modified to accept only linkedin accounts instead mail. It can be modified easily in case you need to display other type of contact
+% Fork: It can be modified easily in case you need to display other type of contact
 \newcommand{\cvref}[2]{%
   \textcolor{emphasis}{\textbf{#1}}\par
   \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em,align=left]

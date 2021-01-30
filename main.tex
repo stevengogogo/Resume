@@ -60,7 +60,7 @@
     % \AtBeginEnvironment{itemize}{\small}
     
     %% Set the left/right column width ratio to 6:4.
-    \columnratio{0.28}
+    \columnratio{0.28} 
 
     % Start a 2-column paracol. Both the left and right columns will automatically
     % break across pages if things get too long.
@@ -68,20 +68,23 @@
     
         % ----- Skills -----
         \cvsection{Skills}
-            \cvtag{Julia}
+            \cvtag{\julia}
             \cvtag{Python}
+            \cvtag{C++} \\
+            \cvtag{$LaTeX$}
             \cvtag{Github CI}
             \cvtag{Git}
-            \cvtag{$LaTeX$}
+            
             %\medskip
         % ----- Skills -----
         
         % ----- INTERESTS -----
         \cvsection{Interests}
-            \cvtag{Numerical Method}
-            \cvtag{Machine Learning}
-            \cvtag{Parallel processing}
-            \cvtag{Control Systems}
+            \cvtag{Numerical Method}\\
+            \cvtag{Machine Learning}\\
+            \cvtag{Parallel processing}\\
+            \cvtag{Control Systems} \\
+            \cvtag{Systems Biology}
         
         % ----- LEARNING -----
         
@@ -149,6 +152,21 @@
             \end{quote}
         % ----- ABOUT ME -----
         
+        % ----- EDUCATION -----
+        \cvsection{Education}
+            \cvevents{Master of Biomedical Engineering}{| Graduate Institute of Biomedical Electronics and Bioinformatics, National Taiwan University}{Sept. 2018 -- Present}{ Taipei, Taiwan}{ GPA: 4.19/4.3}
+     
+            
+            \divider
+            
+            \cvevents{Bachelor of Electrical Engineering}{| Department of Electrical Engineering, National Taiwan University}{Sept. 2014 -- July 2018}{Taipei, Taiwan}{GPA: 3.71/4.3}
+            
+            \divider 
+            
+            \cvevents{Doctor of Dental Surgery}{| Department of Dentistry, National Yang-Ming Chiao-Tung University}{Sept. 2014 -- Present}{Taipei, Taiwan}{GPA: 2.4/4.3}
+          
+        % ----- EDUCATION -----
+        
         % ----- EXPERIENCE -----
         \cvsection{Experience}
             \cvevent{Charge }{| Company}{Mm YYYY -- Mm YYYY}{City, Country}
@@ -167,23 +185,22 @@
             \end{itemize}
         % ----- EXPERIENCE -----
         
-        % ----- EDUCATION -----
-        \cvsection{Education}
-            \cvevent{Title }{| Institution}{Mm YYYY -- Mm YYYY}{City, Country}
-            \begin{itemize}
-                \item GPA: 1,23
-            \end{itemize}
+
+        
+          \cvsection{Projects}
+            \cvevent{FindSteadyStates.jl: Multi-threaded Steady-state Explorer}{\cvrepo{| \faGithub}{https://github.com/stevengogogo/FindSteadyStates.jl}\cvrepo{| \faGlobe}{https://stevengogogo.github.io/FindSteadyStates.jl/dev/}}{Oct. 2020 -- Jan. 2021}{}
+     
             \divider
             
-            \cvevent{Title }{| Institution}{Mm YYYY -- Mm YYYY}{City, Country}
+            \cvevent{Project 1 }{\cvrepo{| \faGitlab}{https://gitlab.com/user/repo}\cvrepo{| \faGlobe}{https://repo-demo.com/}}{Mm YYYY -- Mm YYYY}{}
             \begin{itemize}
-                \item GPA: 1,23
+                \item Item 1
+                \item Item 2
             \end{itemize}
-        % ----- EDUCATION -----
-        
+            
         % ----- PROJECTS -----
-        \cvsection{Projects}
-            \cvevent{Project 1 }{\cvrepo{| \faGithub}{https://github.com/user/repo}\cvrepo{| \faGlobe}{https://repo-demo.com/}}{Mm YYYY -- Mm YYYY}{}
+        \cvsection{Publication}
+            \cvevent{Understanding the System Dynamics of Mitochondrial Retrograde Signaling from a Differential Equationbased Framework}{\cvrepo{| \faGithub}{https://github.com/user/repo}\cvrepo{| \faGlobe}{https://repo-demo.com/}}{Mm YYYY -- Mm YYYY}{}
             \begin{itemize}
                 \item Item 1
                 \item Item 2
