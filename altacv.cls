@@ -41,11 +41,13 @@
 %% file more 'friendly' with copy-paste etc
 \RequirePackage[a-1b]{pdfx}
 \RequirePackage[margin=2cm]{geometry}
-\RequirePackage{fontawesome5}
+\RequirePackage{fontawesome}
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
+\usepackage{ifthen}
 \RequirePackage{markdown}
+\usepackage{url}
 \usepackage{tikz} %繪畫
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
@@ -268,7 +270,7 @@
   \setlength{\altacv@photo@diam@right}{#1}%
   \forcsvlist{\altacv@add@photo@right}{#2}%
 }
-\let\photo\photoR
+\let\photo\photoL
 
 \newcommand{\namefont}{\Huge\bfseries}
 \newcommand{\taglinefont}{\large\bfseries}
@@ -324,13 +326,13 @@
   \medskip\normalsize
 }
 
-\newcommand{\cvevents}[5]{%
+\newcommand{\cvevents}[6]{%
   {\large\color{emphasis}#1}
   \ifstrequal{#2}{}{}{\large{\color{accent}#2}}
   \par\medskip\normalsize
   \ifstrequal{#3}{}{}{{\small\makebox[0.33\linewidth][l]{\color{accent}\faCalendar\color{emphasis}~#3}}}
   \ifstrequal{#4}{}{}{{\small\makebox[0.33\linewidth][l]{\color{accent}\faMapMarker\color{emphasis}~#4}}}
-  \ifstrequal{#5}{}{}{{\small\makebox[0.33\linewidth][l]{\color{accent}\faInfoCircle\color{emphasis}~#5}}}\par
+  \ifstrequal{#5}{}{}{{\small\makebox[0.33\linewidth][l]{\color{accent}#5\color{emphasis}~#6}}}\par
   \medskip\normalsize
 }
 
@@ -419,10 +421,13 @@
 }
 
 % Fork: It can be modified easily in case you need to display other type of contact
-\newcommand{\cvref}[2]{%
-  \textcolor{emphasis}{\textbf{#1}}\par
-  \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em,align=left]
-    \item[\small\normalfont\faGraduationCap]\href{https://linkedin.com/in/#2}{#2}
+\newcommand{\cvref}[4][]{%
+  \textcolor{emphasis}{\textbf{#2}}\par
+  \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em, align=left]
+    \ifthenelse { \equal {#1} {} } 
+        {\item [\small\normalfont\faTrophy]#3}
+        {\item [\small\normalfont\faTrophy]\href{#1}{#3 \faExternalLink}}
+    \item [~\small\normalfont\faMapMarker]{#4}
   \end{description}
 }
 
@@ -454,4 +459,11 @@
   \pagestyle{empty}
   \color{body}
   \raggedright
+}
+
+% 水平對齊: [空間, icon, 內容]
+\newcommand{\alignh}[4][]{
+\ifthenelse { \equal {#1} {} } 
+    {{\small\makebox[#2\linewidth][l]{\color{accent}#3\color{emphasis}~#4}}}
+    {{\small\makebox[#2\linewidth][l]{\href{#1}{\color{accent}#3\color{emphasis}~#4}}} }
 }
