@@ -46,7 +46,7 @@
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
 \RequirePackage{markdown}
-\usepackage{tikz}
+\usepackage{tikz} %繪畫
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
 
@@ -214,7 +214,7 @@
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\tagline}[1]{\def\@tagline{#1}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
-\NewInfoField{email}{\faAt}[mailto:]
+\NewInfoField{email}{\faEnvelope}[mailto:]
 \NewInfoField{mailaddress}{\faEnvelope}
 \NewInfoField{phone}{\faPhone}
 \NewInfoField{homepage}{\faGlobe}[https://]
