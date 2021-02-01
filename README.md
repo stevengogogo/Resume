@@ -1,3 +1,8 @@
+# 履歷
+
+- 連結文件至於 `doc` 中
+- 單頁版見: `one-page`
+
 # AltaCV, yet another LaTeX CV/Résumé class
 
 Compile This file at Overleaf: https://www.overleaf.com/project/6004b6a30000fa4a74010b35
