@@ -36,7 +36,7 @@ make build
 
 ## Why tectonic?
 
-I've used AltaCV with `lualatex`, but soon frustrating with complicated installation which makes really hard to deploy this template on individual laptop. Though Overleaf is a pormising solution for compiling the tex file, the online platform doesn't support all the branch in git - only for master branch. This is quite annoying when frequent changes in single branch without proper version control. The tectonic is the final solution, it can execute tex file in simple command via auto managing the package installation.
+I had used AltaCV with `lualatex` for a while, but soon frustrating with complicated installation which makes it really hard to deploy this template on individual laptop. Though Overleaf is a pormising solution for compiling the tex file, the online platform doesn't support all the branch in git - only for master branch. This is quite annoying when frequent changes in single branch without proper version control. The tectonic is the final solution, it can execute tex file in simple command via auto managing the package installation.
 
 ---
 
