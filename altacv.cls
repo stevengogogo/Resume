@@ -39,9 +39,8 @@
 \LoadClass{article}
 %% v1.3.2 Hopefully this helps make the PDF
 %% file more 'friendly' with copy-paste etc
-\RequirePackage[a-1b]{pdfx}
 \RequirePackage[margin=2cm]{geometry}
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
@@ -426,8 +425,17 @@
   \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em, align=left]
     \ifthenelse { \equal {#1} {} } 
         {\item [\small\normalfont\faTrophy]#3}
-        {\item [\small\normalfont\faTrophy]\href{#1}{#3 \faExternalLink}}
+        {\item [\small\normalfont\faTrophy]\href{#1}{#3 \faExternalLink*}}
     \item [~\small\normalfont\faMapMarker]{#4}
+  \end{description}
+}
+
+\newcommand{\cvrefcourse}[3][]{%
+  \textcolor{emphasis}{\textbf{#2}}\par
+  \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em, align=left]
+    \ifthenelse { \equal {#1} {} } 
+        {\item [\small\normalfont\faSchool]#3}
+        {\item [\small\normalfont\faSchool]\href{#1}{#3 \faExternalLink*}}
   \end{description}
 }
 
